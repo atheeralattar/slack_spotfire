@@ -1,10 +1,14 @@
-import slack
+mport slack
+import pyautogui
 import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-env_path = Path('.') / '.env'
+env_path = Path('C:/Users/aalattar/Desktop/playground/slack_spotfire') / '.env'
 load_dotenv(dotenv_path=env_path)
-
+print(env_path)
 client = slack.WebClient(token = os.environ['SLACK_TOKEN'])
-client.chat_postMessage(channel='#test', text ='test')
+file_path = 'C:\Temp\spotfire_screenshot.png' 
+client.files_upload(channels = "#observations", file =file_path, initial_comment = comment)
+
+
